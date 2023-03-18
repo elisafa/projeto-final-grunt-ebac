@@ -15,8 +15,16 @@ module.exports = function (grunt) {
           'main.min.css': 'main.less'
         }
       }
+    },
+    uglify:{
+      target:{
+        files:{
+          'main.min.js':'main.js'
+        }
+      }
     }
   })
   grunt.loadNpmTasks('grunt-contrib-less')
-  grunt.registerTask('default', ['less'])
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.registerTask('default', ['less', 'uglify'])
 }
